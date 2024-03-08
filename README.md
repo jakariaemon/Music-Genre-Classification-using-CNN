@@ -32,4 +32,18 @@ To start the preprocessing, run the `audio_2_image_dataset_generator.py` script:
 
 ```bash
 python audio_2_image_dataset_generator.py
+```
 
+## Image Dataset Info
+After proessing complete, go to your audio data directory. Inside that you will find a new dataset folder. It contains the audio3sec folder and spectogram folder. Inside spectorgram, there is train and test split. Cut thso and put it in to root directory. 
+
+You can download the processed dataset directly from here and start the training immediately. 
+[Download the dataset here](https://drive.google.com/file/d/1_Yc3AGMdtZK9dAaIf2ufPy_pfL4Y1YLh/view?usp=sharing )  
+
+## Train 
+Run the following, it will train the CNN model and saved the model in the directory. 
+```bash
+python train.py
+```
+
+## Inferencing  
