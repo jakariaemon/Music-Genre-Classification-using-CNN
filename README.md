@@ -2,7 +2,9 @@
 
 Music plays a vital role in our lives, eliciting a wide range of emotions from nostalgia to excitement. This project focuses on classifying music genres using a Convolutional Neural Network (CNN), leveraging the unique properties of audio signals and transforming them into visual representations for effective genre classification.
 
-## Project Overview
+## Project Overview 
+Download the model and run a 3 seconds test audio using "interfacing.py". You will get a following output. 
+![result](https://github.com/jakariaemon/Music-Genre-Classification-using-CNN/assets/43466665/24d445b9-82e3-4ae5-8526-7e35813c2c7d)
 
 The goal of this project is to accurately classify music tracks into their respective genres by analyzing short clips of audio. We use a CNN model for this task, as CNNs are highly effective in extracting patterns from visual data. The process involves converting audio files into mel spectrogram images, which capture the essential frequencies and textures of the music, serving as the input data for our CNN model.
 
@@ -38,7 +40,7 @@ python audio_2_image_dataset_generator.py
 After proessing complete, go to your audio data directory. Inside that you will find a new dataset folder. It contains the audio3sec folder and spectogram folder. Inside spectorgram, there is train and test split. Cut thso and put it in to root directory. 
 
 You can download the processed dataset directly from here and start the training immediately. 
-[Download the dataset here](https://drive.google.com/file/d/1_Yc3AGMdtZK9dAaIf2ufPy_pfL4Y1YLh/view?usp=sharing )  
+[Download the dataset here](https://drive.google.com/file/d/1_Yc3AGMdtZK9dAaIf2ufPy_pfL4Y1YLh/view?usp=sharing)  
 
 ## Train 
 Run the following, it will train the CNN model and saved the model in the directory. 
@@ -46,4 +48,10 @@ Run the following, it will train the CNN model and saved the model in the direct
 python train.py
 ```
 
-## Inferencing  
+## Inferencing   
+Download the trained model from here: [Download the dataset here](https://drive.google.com/file/d/14W9mdEVOLbRLp-X5OR7dx_ToleaBIk2n/view?usp=sharing)  
+Put it in the same directory. Now run: 
+```
+python inferencing.py 
+```
+It will open a plot showing the probability of the all class. 
