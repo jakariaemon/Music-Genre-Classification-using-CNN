@@ -10,8 +10,6 @@ cpus = tf.config.experimental.list_physical_devices('CPU')
 base_dir = 'image_dataset'
 train_dir = os.path.join(base_dir, 'train')
 valid_dir = os.path.join(base_dir, 'test')
-
-
 img_height, img_width = 496, 369  # Adjust these dimensions according to your spectrogram images
 batch_size = 32  # Reduce if OOM error occurs.  
 
