@@ -3,19 +3,17 @@ import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-# Disable GPU
+# Disable GPU, set CPU. 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
-
-# Check devices
 cpus = tf.config.experimental.list_physical_devices('CPU')
-print("CPUs:", cpus)
+
 base_dir = 'image_dataset'
 train_dir = os.path.join(base_dir, 'train')
 valid_dir = os.path.join(base_dir, 'test')
 
-# Image dimensions and batch size
+
 img_height, img_width = 496, 369  # Adjust these dimensions according to your spectrogram images
-batch_size = 32
+batch_size = 32  # Reduce if OOM error occurs.  
 
 # Data augmentation and normalization
 train_datagen = ImageDataGenerator(
@@ -30,7 +28,6 @@ train_datagen = ImageDataGenerator(
 
 valid_datagen = ImageDataGenerator(rescale=1./255)
 
-# Data generators
 train_generator = train_datagen.flow_from_directory(
     train_dir,
     target_size=(img_height, img_width),
@@ -43,7 +40,7 @@ valid_generator = valid_datagen.flow_from_directory(
     batch_size=batch_size,
     class_mode='categorical')
 
-# CNN model architecture
+# Simple CNN model architecture
 model = models.Sequential([
     layers.Conv2D(32, (3, 3), activation='relu', input_shape=(img_height, img_width, 3)),
     layers.MaxPooling2D((2, 2)),
