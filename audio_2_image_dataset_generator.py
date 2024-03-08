@@ -62,7 +62,7 @@ def distribute_train_test(base_path, genres, test_ratio=0.1):
     """
     for genre in genres:
         train_path = os.path.join(base_path, 'dataset/spectrograms/train', genre)
-        test_path = os.path.join(base_path, 'dataset/spectrograms/test', genre)
+        test_path = os.path.join(base_path, 'dataset/spectrograms/test', genre)     #TODO: improve directory structure 
         filenames = os.listdir(train_path)
         random.shuffle(filenames)
         test_size = int(len(filenames) * test_ratio)
