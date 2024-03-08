@@ -2,7 +2,7 @@ import os
 import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-
+# TODO: Add tensorborad logger for visualization  
 # Disable GPU, set CPU. 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 cpus = tf.config.experimental.list_physical_devices('CPU')
