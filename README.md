@@ -39,7 +39,7 @@ python audio_2_image_dataset_generator.py
 ## Image Dataset Info
 After proessing complete, go to your audio data directory. Inside that you will find a new dataset folder. It contains the audio3sec folder and spectogram folder. Inside spectorgram, there is train and test split. Cut thso and put it in to root directory. 
 
-You can download the processed dataset directly from here and start the training immediately. 
+You can download the processed dataset directly from here and start the training immediately. Note that this model is undertrained due to time constrains. Its only trained on 6 epochs and achieve 56% accuracy. 
 [Download the dataset here](https://drive.google.com/file/d/1_Yc3AGMdtZK9dAaIf2ufPy_pfL4Y1YLh/view?usp=sharing)  
 
 ## Train 
