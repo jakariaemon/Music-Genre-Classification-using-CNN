@@ -37,7 +37,7 @@ def display_class_probabilities(predictions, genres):
     plt.title('Music Genre Classification Probabilities')
     plt.show()
 
-audio_path = 'rock.00008_clip_1.wav'  
+audio_path = 'rock.00008_clip_1.wav'  # Set your test audio. 3 seconds. 
 genres = 'blues classical country disco pop hiphop metal reggae rock'.split()
 predictions = predict_genre(audio_path)
 display_class_probabilities(predictions, genres)
