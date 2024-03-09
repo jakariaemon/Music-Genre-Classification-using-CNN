@@ -70,8 +70,8 @@ def distribute_train_test(base_path, genres, test_ratio=0.1):
         for filename in test_files:
             shutil.move(os.path.join(train_path, filename), os.path.join(test_path, filename))
 
-base_path = 'audiio_data_30_sec'  # Long audio directory/ 
-genres = 'blues classical country disco pop hiphop metal reggae rock'.split()   # subfolder names. 
+base_path = 'audiio_data_30_sec'  # Long audio directory
+genres = 'blues classical country disco pop hiphop metal reggae rock'.split()   # subfolder names
 
 create_directories(base_path, genres)
 split_save_audio_files(base_path, genres)
