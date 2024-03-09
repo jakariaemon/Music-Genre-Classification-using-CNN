@@ -62,5 +62,4 @@ history = model.fit(
     validation_steps=valid_generator.samples // batch_size)
 
 model.save('music_genre_classification_model.h5')
-
 print("Model trained and saved successfully!")
