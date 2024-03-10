@@ -1,17 +1,17 @@
 import os
-import tensorflow as tf
+import tensorflow as tf 
 from tensorflow.keras import layers, models
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-# TODO: Add tensorborad logger for visualization  
-# Disable GPU, set CPU. 
+
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 cpus = tf.config.experimental.list_physical_devices('CPU')
 
-base_dir = 'image_dataset'
+base_dir = 'audio_data_30_sec/dataset/spectrograms'
 train_dir = os.path.join(base_dir, 'train')
 valid_dir = os.path.join(base_dir, 'test')
 img_height, img_width = 150, 150  
-batch_size = 4  # Reduce if OOM error occurs.  
+
+batch_size = 4  # Reduce if OOM error occurs.
 
 # Data augmentation and normalization
 train_datagen = ImageDataGenerator(
@@ -50,10 +50,13 @@ model = models.Sequential([
     layers.Dense(512, activation='relu'),
     layers.Dense(len(train_generator.class_indices), activation='softmax')
 ])
+
+
 model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 model.summary()
+
 history = model.fit(
     train_generator,
     steps_per_epoch=train_generator.samples // batch_size,
@@ -61,5 +64,5 @@ history = model.fit(
     validation_data=valid_generator,
     validation_steps=valid_generator.samples // batch_size)
 
-model.save('music_genre_classification_model.h5')
+model.save('lid.h5')
 print("Model trained and saved successfully!")
